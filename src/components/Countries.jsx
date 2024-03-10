@@ -13,11 +13,13 @@ function Countries() {
     fetchCountries();
   }, []);
   return (
-    <div>
+    <div className=" max-w-7xl mx-auto">
       <h1>Countries : {coutries.length}</h1>
-      {coutries.map((items, index) => (
-        <Country coutries={items} key={index} />
-      ))}
+      <div className=" grid grid-cols-3">
+        {coutries.map((items, index) => (
+          <Country coutries={items} key={index} />
+        ))}
+      </div>
     </div>
   );
 }
