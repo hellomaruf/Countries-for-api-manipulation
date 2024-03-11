@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-function Country({ coutries, handleVisitedCountries }) {
+function Country({ coutries, handleVisitedCountries, handleVistiedFlags }) {
   const { name, flags, capital, cca3 } = coutries;
   let [visited, setVisited] = useState(false);
   const handleVisited = () => {
     setVisited(!visited);
   };
-  //   console.log(handleVisitedCountries);
   return (
     <div
       className={` m-4 p-6 rounded-xl ${
@@ -30,6 +29,13 @@ function Country({ coutries, handleVisitedCountries }) {
         className=" bg-red-500 py-2 px-4 rounded-xl text-white"
       >
         Mark Visited
+      </button>
+      <br />
+      <button
+        className=" bg-fuchsia-500 text-white py-2 px-4 rounded-xl my-3"
+        onClick={() => handleVistiedFlags(coutries)}
+      >
+        Add flag
       </button>
     </div>
   );
